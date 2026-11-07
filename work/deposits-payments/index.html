@@ -332,37 +332,46 @@
       box-shadow: 0 16px 60px rgba(0,0,0,0.4);
     }
 
-    /* ── DEPOSITS OVERLAPPING SCREENS ── */
-    .deposit-pair-wrap {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-    }
-    .deposit-pair-screen {
-      position: absolute;
-      width: 62%;
-      aspect-ratio: 6624 / 5272;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
-    }
-    .deposit-pair-screen img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-      display: block;
-    }
-    .deposit-pair-screen--tl {
-      top: 0;
-      left: 0;
-      z-index: 1;
-    }
-    .deposit-pair-screen--br {
-      bottom: 0;
-      right: 0;
-      z-index: 2;
-    }
+/* ── DEPOSITS OVERLAPPING SCREENS ── */
+.deposit-pair-wrap {
+  position: relative;
+  width: 100%;
+  height: 440px; /* Space reserved for the overlapping images */
+  margin-bottom: 32px;
+}
+
+/* Shared styling — both images have identical widths */
+.deposit-pair-screen {
+  position: absolute;
+  width: 58%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+}
+
+.deposit-pair-screen img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* No cropping */
+  object-position: top;
+  display: block;
+}
+
+/* First image — slightly shorter */
+.deposit-pair-screen--tl {
+  top: 0;
+  left: 0;
+  height: fill;
+  z-index: 1;
+}
+
+/* Second image — slightly taller */
+.deposit-pair-screen--br {
+  top: 60px; /* Controls vertical overlap */
+  right: 0;
+  height: 375px;
+  z-index: 2;
+}
 
     /* ── CONTENT SECTIONS ── */
     .cs-section {
@@ -589,18 +598,18 @@
       justify-content: center;
     }
 
-    .cs-ba-frame--before {
-      aspect-ratio: 1776 / 962;
-      flex: none;
-    }
+    .cs-ba-frame--before,
     .cs-ba-frame--after {
-      aspect-ratio: 6624 / 7728;
+      width: 100%;
+      height: auto;
+      aspect-ratio: auto;
+      flex: none;
     }
 
     .cs-ba-frame img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;        /* Was 100% */
+      object-fit: contain; /* Was cover */
       display: block;
     }
 
@@ -644,10 +653,10 @@
       background: rgba(255,255,255,0.16);
       border-color: rgba(163,230,53,0.35);
     }
-    html.light .cs-project-nav-link { background: rgba(0,0,0,0.05); }
+    html.light .cs-project-nav-link { background: transparent; }
     html.light .cs-project-nav-link:hover {
-      background: rgba(0,0,0,0.09);
-      border-color: rgba(20,83,45,0.3);
+      background: transparent;
+      border-color: transparent;
     }
 
     .cs-project-nav-link--next {

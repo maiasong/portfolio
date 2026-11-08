@@ -196,7 +196,7 @@
 
     /* ── HERO SECTION ── */
     .cs-hero {
-      padding: 160px 360px 80px;
+      padding: 160px 250px 80px;
       display: flex;
       flex-direction: column;
       gap: 32px;
@@ -228,7 +228,7 @@
       border-radius: 14px;
       overflow: hidden;
       border: 3px solid rgba(255,255,255,0.5);
-      box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+      /* box-shadow: 0 12px 36px rgba(0,0,0,0.35); */
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
     html.light .cs-hero-photo { border-color: rgba(255,255,255,0.85); }
@@ -685,31 +685,31 @@
           <p class="cs-label fade-up-1">About me</p>
           <h1 class="cs-title fade-up-2">Hi, I'm <span class="pink">Maia</span>! It's nice to meet you.</h1>
           <p class="cs-body fade-up-3">I'm a product designer with a passion for storytelling and detail driven thinking.</p>
-          <p class="cs-body fade-up-3">Growing up, I always loved visual design and understanding why people do things. Studying Human Centered Design and Engineering at the University of Washington allowed me to explore a career in UX and product design, which were both my passions.</p>
+          <!-- <p class="cs-body fade-up-3">Growing up, I always loved visual design and understanding why people do things. Studying Human Centered Design and Engineering at the University of Washington allowed me to explore a career in UX and product design, which were both my passions.</p> -->
           <p class="cs-body fade-up-3">When I'm not designing, I'm probably on a tennis court, chasing a sunset, or making and eating a sweet treat. Please reach out to chat about all things design, food, or the outdoors!</p>
 
         </div>
         <div class="cs-hero-photos fade-up-4">
-          <div class="cs-hero-photo cs-hero-photo--satellite cs-hero-photo--tl">
-            <img src="../assets/img/about/FullSizeRender.jpg" alt="Maia photo 1" />
+          <!-- <div class="cs-hero-photo cs-hero-photo--satellite cs-hero-photo--tl">
+            <img src="../assets/img/about/photo1.jpg" alt="Maia headshot" class="cs-hero-photo-img--zoomed" />
             <div class="cs-hero-photo-overlay"><span>Playing pickleball at sunset is one of my fav 5-9 hobbies</span></div>
-          </div>
+          </div> -->
           <div class="cs-hero-photo cs-hero-photo--main">
-            <img src="../assets/img/about/IMG_0425.jpg" alt="Maia headshot" class="cs-hero-photo-img--zoomed" />
+            <img src="../assets/img/about/photo2.jpg" alt="Maia headshot" class="cs-hero-photo-img--zoomed" />
             <div class="cs-hero-photo-overlay"><span>Cherry blossoms in DC!</span></div>
           </div>
-          <div class="cs-hero-photo cs-hero-photo--satellite cs-hero-photo--bl">
-            <img src="../assets/img/about/IMG_2042 (1).jpg" alt="Maia photo 3" />
+          <!-- <div class="cs-hero-photo cs-hero-photo--satellite cs-hero-photo--bl">
+            <img src="../assets/img/about/photo3.jpg" alt="Maia headshot" class="cs-hero-photo-img--zoomed" />
             <div class="cs-hero-photo-overlay"><span>I love baking sweet treats</span></div>
           </div>
           <div class="cs-hero-photo cs-hero-photo--satellite cs-hero-photo--br">
-            <img src="../assets/img/about/IMG_4484 (1).JPG" alt="Maia photo 5" class="cs-hero-photo-img--zoomed2" />
+            <img src="../assets/img/about/photo4.jpg" alt="Maia photo 4" class="cs-hero-photo-img--zoomed2" />
             <div class="cs-hero-photo-overlay"><span>Seattle is where I grew up and went to school - Mt Rainier in the back!</span></div>
           </div>
           <div class="cs-hero-photo cs-hero-photo--satellite cs-hero-photo--tr">
-            <img src="../assets/img/about/IMG_2383.jpg" alt="Maia photo 4" />
+            <img src="../assets/img/about/photo5.jpg" alt="Maia headshot" class="cs-hero-photo-img--zoomed" />
             <div class="cs-hero-photo-overlay"><span>I love to play and watch tennis</span></div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -739,15 +739,6 @@
       }
       resize();
       window.addEventListener('resize', resize);
-
-      // Static stars
-      const STAR_COUNT = 280;
-      const stars = Array.from({ length: STAR_COUNT }, () => ({
-        x: Math.random(),
-        y: Math.random(),
-        r: Math.random() * 1.1 + 0.2,
-        a: Math.random() * 0.6 + 0.2,
-      }));
 
       // Shooting stars
       const shooters = [];

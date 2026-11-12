@@ -344,22 +344,19 @@
 /* ── DEPOSITS OVERLAPPING SCREENS ── */
 .deposit-pair-wrap {
   position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   width: 100%;
-  height: 440px; /* Space reserved for the overlapping images */
+  padding-bottom: 60px;
   margin-bottom: 32px;
 }
 
-/* ── LARGE MONITORS ── */
-@media (min-width: 1600px) {
-  .deposit-pair-wrap {
-    height: clamp(440px, 34vw, 700px);
-  }
-}
-
-/* Shared styling — both images have identical widths */
+/* Both images share the same grid area */
 .deposit-pair-screen {
-  position: absolute;
+  position: relative;
+  grid-area: 1 / 1;
   width: 58%;
+  height: auto;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 16px 48px rgba(0,0,0,0.35);
@@ -368,24 +365,23 @@
 .deposit-pair-screen img {
   width: 100%;
   height: auto;
-  object-fit: contain; /* No cropping */
-  object-position: top;
   display: block;
+  object-fit: contain;
+  object-position: top;
 }
 
-/* First image — slightly shorter */
+/* First image — left */
 .deposit-pair-screen--tl {
-  top: 0;
-  left: 0;
-  height: auto;
+  justify-self: start;
+  align-self: start;
   z-index: 1;
 }
 
-/* Second image — slightly taller */
+/* Second image — right, overlapping the first */
 .deposit-pair-screen--br {
-  top: 60px; /* Controls vertical overlap */
-  right: 0;
-  height: 375px;
+  justify-self: end;
+  align-self: start;
+  transform: translateY(60px);
   z-index: 2;
 }
 
@@ -839,9 +835,9 @@
         display: none;
       }
 
-      .deposit-pair-wrap {
+      /* .deposit-pair-wrap {
         height: 360px;
-      }
+      } */
 
       .deposit-pair-screen {
         width: 65%;
@@ -901,6 +897,7 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+        padding-bottom: 0;
         margin-bottom: 0;
       }
 
@@ -1078,19 +1075,19 @@
 
   <!-- NAV -->
   <nav id="sticky-nav">
-    <a class="nav-logo" href="../../">Maia Song（๑ᵔ⤙ᵔ๑）</a>
+    <a class="nav-logo" href="#">Maia Song（๑ᵔ⤙ᵔ๑）</a>
     <div class="nav-sep"></div>
     <ul class="nav-links">
-      <li><a href="../../#work">Work</a></li>
-      <li><a href="../../about/">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="about/">About</a></li>
       <li>
         <a href="../../assets/documents/MaiaSongResume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-      </li>
+        </li>
     </ul>
     <div class="nav-sep"></div>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
-      <span class="toggle-icon" id="iconMoon">🌙</span>
-      <span class="toggle-icon" id="iconSun">☀️</span>
+    <button class="theme-toggle" id="themeToggle2" aria-label="Toggle light/dark mode">
+      <span class="toggle-icon" id="iconMoon2">🌙</span>
+      <span class="toggle-icon" id="iconSun2">☀️</span>
     </button>
   </nav>
 
@@ -1522,7 +1519,7 @@
     // ── THEME TOGGLE ──
     (function () {
       const html = document.documentElement;
-      const btn = document.getElementById('themeToggle');
+      const btn = document.getElementById('themeToggle2');
 
       let dark = !html.classList.contains('light');
 

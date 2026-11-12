@@ -948,19 +948,19 @@
 
   <!-- NAV -->
   <nav id="sticky-nav">
-    <a class="nav-logo" href="../../">Maia Song（๑ᵔ⤙ᵔ๑）</a>
+    <a class="nav-logo" href="#">Maia Song（๑ᵔ⤙ᵔ๑）</a>
     <div class="nav-sep"></div>
     <ul class="nav-links">
-      <li><a href="../../#work">Work</a></li>
-      <li><a href="../../about/">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="about/">About</a></li>
       <li>
-        <a href="assets/documents/MaiaSongResume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-      </li>
+        <a href="../../assets/documents/MaiaSongResume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        </li>
     </ul>
     <div class="nav-sep"></div>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
-      <span class="toggle-icon" id="iconMoon">🌙</span>
-      <span class="toggle-icon" id="iconSun">☀️</span>
+    <button class="theme-toggle" id="themeToggle2" aria-label="Toggle light/dark mode">
+      <span class="toggle-icon" id="iconMoon2">🌙</span>
+      <span class="toggle-icon" id="iconSun2">☀️</span>
     </button>
   </nav>
 
@@ -1145,7 +1145,7 @@
       <span class="cs-section-label">Final deck shareout</span>
       <div class="cs-deck-card">
         <p class="cs-deck-text">As part of our final shareout with the client, we prepared a deck summarizing all our work and findings from the past 4 months. I loved the opportunity to dive into a space very different from the fintech industry and found it very fulfilling to design for a different audience!</p>
-        <a href="assets/documents/nightingale-final.pdf" class="cs-deck-link" target="_blank" rel="noopener noreferrer">View deck →</a>
+        <a href="../../assets/documents/nightingale-final.pdf" class="cs-deck-link" target="_blank" rel="noopener noreferrer">View deck →</a>
 
       </div>
     </div>
@@ -1225,12 +1225,12 @@
         const isLight = document.documentElement.classList.contains('light');
         const starColor = isLight ? '80,100,160' : '200,215,255';
         const starAlphaScale = isLight ? 0.35 : 1;
-        stars.forEach(s => {
-          ctx.beginPath();
-          ctx.arc(s.x * W, s.y * H, s.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${starColor},${s.a * starAlphaScale})`;
-          ctx.fill();
-        });
+        // stars.forEach(s => {
+        //   ctx.beginPath();
+        //   ctx.arc(s.x * W, s.y * H, s.r, 0, Math.PI * 2);
+        //   ctx.fillStyle = `rgba(${starColor},${s.a * starAlphaScale})`;
+        //   ctx.fill();
+        // });
 
         lastShot += dt;
         if (lastShot > nextDelay) {
@@ -1374,7 +1374,7 @@
     // ── THEME TOGGLE ──
     (function () {
       const html = document.documentElement;
-      const btn = document.getElementById('themeToggle');
+      const btn = document.getElementById('themeToggle2');
 
       let dark = !html.classList.contains('light');
 
